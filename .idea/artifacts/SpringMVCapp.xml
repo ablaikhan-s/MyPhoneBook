@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringMVCapp">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringMVCapp</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="MyPhoneBook/web/Web" />
+    </root>
+  </artifact>
+</component>
