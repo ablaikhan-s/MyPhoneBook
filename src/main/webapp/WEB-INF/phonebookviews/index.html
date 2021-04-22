@@ -22,7 +22,7 @@
 				background: #f5d7bf;
 				padding: 10px;
 			}
-			input {
+			input, button {
 				font-size: 16px;
 				padding: 10px;
 				border-radius: 3px;
@@ -31,13 +31,15 @@
 
 		</style>
     </HEAD>
-    <BODY bgcolor="#FFFFF0">
+    <BODY bgcolor="#556B2F">
 		<div class = "container" align="center">
-			<div id="findform">
-			<form action="filter" method="post">
+			<div>
+			<form>
 				<input type="text" name="filter" placeholder = "Enter some text...">
-				<input type="submit" value="Find" >
+				<button formaction="filter" formmethod="post" > Find </button>
+				<button formaction="newcontact" formmethod="post"> New contact </button>
 			</form>
+
 			</div>
 
 			<div id = "table">

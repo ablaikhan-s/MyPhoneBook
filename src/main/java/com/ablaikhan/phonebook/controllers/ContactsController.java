@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/phonebook")
 public class ContactsController {
-
     private final ContactDAO contactDAO;
 
     @Autowired
@@ -20,7 +19,7 @@ public class ContactsController {
     @GetMapping()
     public String index(Model model){
         model.addAttribute("contacts", contactDAO.index());
-        return "/index";
+        return "index";
     }
 
     @PostMapping("/filter")
@@ -29,6 +28,20 @@ public class ContactsController {
         return "index";
     }
 
+    @PostMapping("newcontact")
+    public String newcontactform(){
+        return "newcontact";
+    }
+
+    @PostMapping("createcontact")
+    public String createcontact( @RequestParam(value = "Firstname") String fname,
+                               @RequestParam(value = "Lastname") String lname,
+                               @RequestParam(value = "P_number") String pnumber,
+                               @RequestParam(value = "Adress") String adress, Model model){
+        contactDAO.createcontact(fname, lname, pnumber, adress);
+        model.addAttribute("contacts", contactDAO.index());
+        return "index";
+    }
 /*    @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
         model.addAttribute("contact", contactDAO.show(id));
