@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+		<link rel = "shortcut icon" href = "favicon.ico" type = "image/ico">
+        <TITLE>My phonebook</TITLE>
+		<style>
+			table {
+				font-family: sans-serif;
+				text-align: left;
+				border-collapse: seperate;
+				border-spacing: 5px;
+				background: #ece9e0;
+				color: #656665;
+				border: 16px solid #ece9e0;
+				border-radius: 15px;
+			}
+			th {
+				font-size: 18px;
+				padding: 10px;
+			}
+			td {
+				background: #f5d7bf;
+				padding: 10px;
+			}
+			input {
+				font-size: 16px;
+				padding: 10px;
+				border-radius: 3px;
+			}
+
+
+		</style>
+    </HEAD>
+    <BODY bgcolor="#FFFFF0">
+		<div class = "container" align="center">
+			<div id="findform">
+			<form action="filter" method="post">
+				<input type="text" name="filter" placeholder = "Enter some text...">
+				<input type="submit" value="Find" >
+			</form>
+			</div>
+
+			<div id = "table">
+				<table >
+					<tr>
+						<th>id</th>
+						<th>First name</th>
+						<th>Last name</th>
+						<th>Phone number</th>
+						<th>Adress</th>
+					</tr>
+					<br>
+
+					<div th:each="contact : ${contacts}">
+					<tr>
+						<!--/*@thymesVar id="contact" type="com.ablaikhan.phonebook.models.Contact"*/-->
+						<td th:text="${contact.getId()}"></td>
+						<td th:text="${contact.getFirstname()}"></td>
+						<td th:text="${contact.getLastname()}"></td>
+						<td th:text="${contact.getP_number()}"></td>
+						<td th:text="${contact.getAdress()}">  </td>
+					</tr>
+						</div>
+				</table>
+			</div>
+		</div>
+
+    </BODY>
+</HTML>
