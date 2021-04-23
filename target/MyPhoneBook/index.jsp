@@ -3,7 +3,7 @@
     <title>Hello page</title>
     <style>
         div {
-            font-family: Comic Sans ;
+            font-family: sans-serif; ;
             }
         input{
             font-size: 16px;
@@ -12,7 +12,7 @@
         }
     </style>
 </head>
-<body background="#FFFFF0">
+<body bgcolor="#556B2F">
 <div align="center">
 <h2>Welcome to Spring MVC project</h2>
 <form action="/phonebook/">

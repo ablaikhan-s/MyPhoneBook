@@ -2,6 +2,7 @@ package com.ablaikhan.phonebook.dao;
 
 import com.ablaikhan.phonebook.models.Contact ;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -82,6 +83,16 @@ public class ContactDAO {
         return contacts;
     }
 
+    public void createcontact( String fname, String lname, String pnumber, String adress){
+        try {
+            Statement statement = connection.createStatement();
+            String addcontact = "INSERT INTO `contacts`(`firstname`,`lastname`,`phonenumber`, `adress`) VALUES('" + fname + "','" + lname + "','" + pnumber + "','" + adress + "');";
+            statement.executeUpdate(addcontact);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
 
 
 }
